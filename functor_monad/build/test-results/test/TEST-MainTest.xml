@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-09-02T17:35:23" hostname="MacBook-Pro-2" time="0.03">
+  <properties/>
+  <testcase name="create an empty box of integer" classname="MainTest" time="0.021"/>
+  <testcase name="create a box containing number 9" classname="MainTest" time="0.002"/>
+  <testcase name="mapping a box containing a 9 to a box containing a '9' should result in a box with a string value of 9 in it" classname="MainTest" time="0.002"/>
+  <testcase name="mapping an empty box for Ints should result in an empty box for strings" classname="MainTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
