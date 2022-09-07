@@ -10,13 +10,7 @@ sealed class Box<T> {
     }
 
     //An applicative applies a wrapped function to a wrapped value
-    fun <T,U>apply(f: Box<((T) -> U)>):Box<U> = when(f) {
-            is Some -> {
-                val transform = f.content
-                map(transform)
-            }
-            is Empty -> Empty()
-        }
+    fun <T,U>apply(fab: Box<(T) ->U>): Box<U> = fab.flatMap{ f:(T) ->U -> this.map(f)  }
 
     // Monad applies a function that returns wrapped value to a wrapped value
     fun <T,U>flatMap(f: (T) -> Box<U>): Box<U> {
@@ -24,6 +18,10 @@ sealed class Box<T> {
             is Some -> return f((this as Some<T>).content)
             else -> return Empty()
         }
+    }
+
+    companion object {
+        fun <T>pure(t:T) = Some(t)
     }
 }
 
